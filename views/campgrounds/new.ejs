@@ -1,0 +1,41 @@
+<% layout('layouts/BOILERPLATE') %>
+    <div class="row mb-5">
+        <h1 class="text-center">
+            New Campground
+        </h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds" method="post" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" required>
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="imgurl">Image Url</label>
+                    <input class="form-control" type="text" id="imgurl" name="campground[image]" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="number" class="form-control" id="price" name="campground[price]" placeholder="0.00"
+                            aria-label="price" aria-describedby="price-label" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"
+                        required></textarea>
+                </div class="mb-3">
+                <button class="offset-4 btn btn-success" type="submit">Add Campground</button>
+
+            </form>
+
+
+        </div>
+    </div>

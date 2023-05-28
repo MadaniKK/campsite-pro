@@ -1,0 +1,43 @@
+<% layout('layouts/BOILERPLATE') %>
+
+
+    <div class="row mb-5">
+        <h1 class="text-center">
+            <%= campground.title %>
+        </h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate
+                class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]"
+                        value="<%= campground.title %> " required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]"
+                        value="<%= campground.location %> " required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="imgurl">Image Url</label>
+                    <input class="form-control" type="text" id="imgurl" name="campground[image]"
+                        value="<%= campground.image %> " required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" name="campground[price] placeholder=" 0.00"
+                            aria-label="price" aria-describedby="price-label" value="<%= campground.price %> " required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"
+                        style="height: 200px" required><%= campground.description %></textarea>
+                </div class="mb-3">
+                <button class="offset-4 btn btn-info" type="submit">Update Campground</button>
+            </form>
+            <a href="/campgrounds/<%= campground._id  %>"> back </a>
+        </div>
+    </div>
